@@ -39,6 +39,7 @@ export default function SignUpForm({ token, setToken }) {
             const result = await response.json();
             setToken(result.token);
             console.log(result);
+            alert("Valid Username and password submitted!")
             setError(null); //clear errors if successfully submitted
         } catch (error) {
             setError(error.message);

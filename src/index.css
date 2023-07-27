@@ -16,7 +16,7 @@
 
 div {
   min-width: 480px;
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
   background-color: powderblue;
@@ -37,7 +37,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 480px;
   min-height: 100vh;
 }
 
@@ -91,6 +91,8 @@ input[type=submit] {
 
 p {
   margin: 10px 0px;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 button:hover {

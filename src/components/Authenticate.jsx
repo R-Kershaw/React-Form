@@ -9,7 +9,7 @@ export default function Authenticate({ token, setToken }) {
     async function handleClick() {
          //validation
          if (!token) {
-            setError("No Token exists!");
+            setError("Submit a valid username and password. No Token exists!");
             console.log(error);
             return;
         }
