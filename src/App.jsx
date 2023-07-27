@@ -1,6 +1,6 @@
 import './App.css';
-import Authenticate from './folder/Authenticate';
-import SignUpForm from './folder/SignUpForm';
+import Authenticate from './components/Authenticate';
+import SignUpForm from './components/SignUpForm';
 import { useState } from 'react';
 
 export default function App() {
@@ -8,8 +8,8 @@ export default function App() {
 
   return (
     <>
-      <Authenticate token={token} setToken={setToken} />
       <SignUpForm token={token} setToken={setToken} />
+      <Authenticate token={token} setToken={setToken} />
     </>
   )
 }

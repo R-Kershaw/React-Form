@@ -14,11 +14,21 @@
   -webkit-text-size-adjust: 100%;
 }
 
+div {
+  min-width: 480px;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: powderblue;
+  border-radius: 5%;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -31,14 +41,33 @@ body {
   min-height: 100vh;
 }
 
+label{
+  display: block;
+  float: left;
+  margin-bottom: 5px;
+  /*Change to right here if you want it close to the inputs*/
+}
+
+form {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  margin: 20px;
+  padding: 20px;
+
+  background-color: snow;
+  border-radius: 5%;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
 button {
+  margin: 2px 0px;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -46,10 +75,28 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+
+  height: 40px;
+  width: 100%;
 }
+
+input[type=submit] {
+  font-size: 20px;
+  height: 40px;
+  width: 100%;
+  color: white;
+  background-color: forestgreen;
+  border: none;
+}
+
+p {
+  margin: 10px 0px;
+}
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -60,9 +107,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

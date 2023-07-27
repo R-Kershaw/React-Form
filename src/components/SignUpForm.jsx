@@ -9,7 +9,22 @@ export default function SignUpForm({ token, setToken }) {
     async function handleSubmit(event) {
         event.preventDefault();
         //    console.log("Hello");
+
         try {
+            //handle validation with regular expressions. (?=) uses positive lookahead assertions
+            const validUsername = /.{8,20}$/;
+            const validPassword = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+
+            if (!validUsername.test(username)) {
+                setError("Invalid Username! Must be between 8 and 20 characters long");
+                return;
+            }
+
+            if (!validPassword.test(password)) {
+                setError("Invalid Password! Must be between 8 and 20 characters long, contain one digit, one letter and one special character");
+                return;
+            }
+
             const response = await fetch(`https://fsa-jwt-practice.herokuapp.com/signup`,
                 {
                     method: "POST",
@@ -24,33 +39,36 @@ export default function SignUpForm({ token, setToken }) {
             const result = await response.json();
             setToken(result.token);
             console.log(result);
+            setError(null); //clear errors if successfully submitted
         } catch (error) {
             setError(error.message);
         }
     }
 
     return (
-        <>
+        <div>
             <h2>Sign Up!</h2>
             {error && <p>{error}</p>}
 
             <form onSubmit={handleSubmit}>
                 <label>
                     Username:{" "}
-                    <input value={username}
+                    <input
+                        placeholder="Username"
+                        value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </label>
                 <label>
                     Password:{" "}
                     <input type="password"
+                        placeholder="Password"
                         value={password}
                         onChange={(e) => setPasssword(e.target.value)}
                     />
                 </label>
                 <button>Submit</button>
             </form>
-        </>
+        </div>
     )
-
 }
