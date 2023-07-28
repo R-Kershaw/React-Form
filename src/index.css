@@ -15,10 +15,8 @@
 }
 
 div {
-  min-width: 480px;
-  max-width: 960px;
+  width: 600px;
   margin: 0 auto;
-  box-sizing: border-box;
   background-color: powderblue;
   border-radius: 5%;
 }
@@ -41,7 +39,7 @@ body {
   min-height: 100vh;
 }
 
-label{
+label {
   display: block;
   float: left;
   margin-bottom: 5px;
